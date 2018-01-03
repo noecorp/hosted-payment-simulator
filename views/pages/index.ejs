@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body class="container">
+    <main>
+        <div class="jumbotron">
+            <% if (status === 'valid') { %>
+            <h1>Transaction is valid. Would you like to proceed?</h1>
+            <p>Pay <%= amount %> for <%= reference %></p>
+            <div>
+                <a href="<%= successUrl %>">Pay</a>
+                <a href="<%= failUrl %>">Decline</a>
+            </div>
+            <% } else { %>
+                <h1>Transaction is not valid!</h1>
+                <p><%= status %></p>
+            <% } %>
+        </div>
+    </main>
+</body>
+
+</html>
